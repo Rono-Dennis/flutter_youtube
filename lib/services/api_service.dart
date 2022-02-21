@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_youtube/models/channel_model.dart';
 import 'package:flutter_youtube/models/video_model.dart';
+import 'package:flutter_youtube/utilities/keys.dart';
 import 'package:http/http.dart' as http;
 
 class APIService {
@@ -16,7 +17,7 @@ class APIService {
     Map<String, String> parameters = {
       'part': 'snippet, contentDetails, statistics',
       'id': channelId,
-      'key': "AIzaSyBlgUXGVkpkNqVbqKxFRyktZOocjrk3y7Q",
+      'key': KEY,
     };
     Uri uri = Uri.https(
       _baseUrl,
@@ -49,7 +50,7 @@ class APIService {
       'playlistId': playlistId,
       'maxResults': '8',
       'pageToken': _nextPageToken,
-      'key': "AIzaSyBlgUXGVkpkNqVbqKxFRyktZOocjrk3y7Q",
+      'key': KEY,
     };
     Uri uri = Uri.https(
       _baseUrl,

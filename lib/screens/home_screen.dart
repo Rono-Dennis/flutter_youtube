@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('YouTube Channel'),
+        title: const Text('Watch Movies'),
       ),
       body: _channel != null
           ? NotificationListener<ScrollNotification>(

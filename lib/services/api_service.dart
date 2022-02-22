@@ -30,10 +30,13 @@ class APIService {
 
     // Get Channel
     var response = await http.get(uri, headers: headers);
+    print("this is the response code==${response.statusCode}");
     if (response.statusCode == 200) {
       Map<String, dynamic> data = json.decode(response.body)['items'][0];
-      Channel channel = Channel.fromMap(data);
 
+      print(response.body.toString());
+      print(data.toString());
+      Channel channel = Channel.fromMap(data);
       // Fetch first batch of videos from uploads playlist
       channel.videos = await fetchVideosFromPlaylist(
         playlistId: channel.uploadPlaylistId,
